@@ -1,70 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(200, 200, 200);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+
+        }
+
+        .backgroundimg {
+            z-index: 1;
+            display: block;
+            position: absolute;
+            top: 180px;
+
+            width: 600px;
+            object-fit: contain;
+            opacity: 80%;
+        }
+
+        .popup {
+            background-color: rgb(210, 7, 129);
+            box-sizing: border-box;
+            width: 200px;
+            height: 210px;
+            display: block;
+            position: absolute;
+            left: 840px;
+            top: 0;
+            z-index: 3;
+            color: whitesmoke;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            padding-left: 20px;
+            padding-top: 50px;
+        }
+
+        .iddi {
+            color: whitesmoke;
+            font-size: 44px;
+            font-weight: 700;
+        }
+
+        #main {
+            background-color: rgb(236, 236, 236);
+            width: 600px;
+            height: 1050px;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            margin-top: 15px;
+            background-color: rgb(81, 4, 214);
+            max-width: 100%;
+            height: 170px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .navimg {
+            width: 100px;
+            margin-left: 15px;
+            margin-right: 10px;
+        }
+
+        .logoheading {
+            display: flex;
+            flex-direction: column;
+            width: min-content;
+            margin-left: 10px;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: whitesmoke;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .logoimg {
+            width: 165px;
+
+        }
+
+        .intro {
+            z-index: 2;
+            margin-top: 60px;
+            padding-left: 20px;
+            max-width: 100%;
+            width: 100%;
+            height: 300px;
+            display:flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            align-items:flex-start;
+            /* background-color: rgb(168, 214, 255); */
+            color: rgb(210, 7, 129);
+            font-size: 45px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .intro2 {
+
+            font-size: 30px;
+        }
+
+        .intro3 {
+            color: rgb(81, 4, 214);
+            font-weight: 300;
+            font-size: large;
+            margin-top: 20px;
+        }
+
+        .intro4 {
+            margin-top: 10px;
+        }
+
+        .cta {
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 60px;
+            margin-left: 20px;
+            font-size: medium;
+            color: rgb(81, 4, 214);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .cta img {
+            width: 350px;
+            height: 270px;
+        }
+
+        .cta button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgb(81, 4, 214);
+            color: whitesmoke;
+            border: 0;
+            font-size: large;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+
+        }
+
+        .cta button:hover {
+            transition: 0.4s;
+            background: rgb(205, 204, 204);
+            color: rgb(210, 7, 129);
+        }
+
+        .cta div {
+            margin-top: 20px;
+            font-weight: 400;
+        }
+
+        #banner {
+            z-index: 2;
+            background-color: rgb(210, 7, 129);
+            color: whitesmoke;
+            width: 180px;
+            height: 450px;
+            bottom: -335px;
+            left: 829px;
+            padding-top: 30px;
+            display: block;
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: flex-start;
+            font-size: small;
+            line-height: 1.4;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        #bannerimg {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bannerimg img {
+            width: 25px;
+            height: 25px;
+            margin: 7px;
+        }
+
+        #bannerimg img:hover {
+            transition: 0.2s;
+            width: 30px;
+            height: 30px;
+            margin: 3px;
+        }
+@media only screen and (min-width:1550px) {
+.popup{
+    left:54%;
+}
+   
+}
+@media only screen and (max-width:1100px){
+.popup{
+    left: 56%;
+}
+#banner{
+    left: 56%;
+}
+
+}
+@media only screen and (max-width:600px) and (min-width:500px) {
+    .popup{
+        left:65%;
+    }
+    #banner{
+        left:65%;
+    }
+}
+@media only screen and (max-width:500px) and (min-width:450px) {
+    .popup{
+        left:73%;
+    }
+    #banner{
+        left:73%;
+    }
+}
+@media only screen and (max-width:450px) and (min-width:200px) {
+    .popup{
+        left:350px;
+    }
+    #banner{
+        left:350px;
+    }
+}
+
+@media only screen and (min-height:720px){
+    #banner{
+        top: 600px;
+    }
+}
+    </style>
 </head>
+
 <body>
     <div class="popup">
-        
 
-            <div class="iddi">ISDI    </div>
-            <div>School of Design</div>
-            <div>&amp; Innovation</div>
-        
+
+        <div class="iddi">ISDI </div>
+        <div>School of Design</div>
+        <div>&amp; Innovation</div>
+
     </div>
     <main id="main">
-    <img src="./bgedited2.jpeg" class="backgroundimg" alt="">
-    <div class="navbar">
-        
+        <img src="./bgedited2.jpeg" class="backgroundimg" alt="">
+        <div class="navbar">
+
             <img class="navimg" src="./My project.png" alt="">
             <div class="logoheading">
                 <img class="logoimg" src="./My project-1.png" alt="">
                 <div>SKILLTECH <br> UNIVERSITY</div>
             </div>
-        
-    </div>
 
-    <section class="intro">
-        <div class="intro1">YOU HAVE<br>DREAMS</div>
-        <div class="intro1 intro4">WE HAVE <br> LIMITLESS</div> 
-        <div class="intro2">OPPORTUNITIES</div>
-        
-        <div class="intro3">Promise us day1 and let <br> your future be our responsibility</div>
-    </section>
-    <section class="cta">
-        <img src="./WhatsApp Image 2022-12-09 at 23.10.14.jpeg" alt="">
-        <div>Explore you creative potential and create a <br> future you desire at India's <br>coolest Design School</div>
-        <a href="https://rebelcorp.in/" target="_blank"><button>APPLY NOW</button></a>
-    </section>
-</main> 
-<div id="banner">
-    <div class="text">
-    Enabling you to lead the <br>
-    world of tomorrow by<br>
-    equiping you with the<br>
-    knowledge and skills you<br>
-    need through industry-led<br>
-    integrated learning and<br>
-    global opportunities at<br>
-    your feet from the best in<br>
-    the Design world, in the<br>
-    heart of an ever-booming,<br>
-    cosmopolitan, and<br>
-    enterprising Mumbai.<br>
-   </div>
-   <div id="bannerimg">
-   <a href="https://rebelcorp.in/"> <img src="./logobanner/Screenshot_2022_1210_135813.png" alt=""></a>
-   <a href="https://rebelcorp.in/"><img src="./logobanner/Screenshot_2022_1210_135847.png" alt=""></a>
-   <a href="https://rebelcorp.in/"><img src="./logobanner/Screenshot_2022_1210_135905.png" alt=""></a>
-   <a href="https://rebelcorp.in/"><img src="./logobanner/Screenshot_2022_1210_135933.png" alt=""></a>
-   </div>
-</div>   
+        </div>
+
+        <section class="intro">
+            <div class="intro1">YOU HAVE<br>DREAMS</div>
+            <div class="intro1 intro4">WE HAVE <br> LIMITLESS</div>
+            <div class="intro2">OPPORTUNITIES</div>
+
+            <div class="intro3">Promise us day1 and let <br> your future be our responsibility</div>
+        </section>
+        <section class="cta">
+            <img src="./WhatsApp Image 2022-12-09 at 23.10.14.jpeg" alt="">
+            <div>Explore you creative potential and create a <br> future you desire at India's <br>coolest Design School
+            </div>
+            <a href="https://rebelcorp.in/" target="_blank"><button>APPLY NOW</button></a>
+        </section>
+    </main>
+    <div id="banner">
+        <div class="text">
+            Enabling you to lead the <br>
+            world of tomorrow by<br>
+            equiping you with the<br>
+            knowledge and skills you<br>
+            need through industry-led<br>
+            integrated learning and<br>
+            global opportunities at<br>
+            your feet from the best in<br>
+            the Design world, in the<br>
+            heart of an ever-booming,<br>
+            cosmopolitan, and<br>
+            enterprising Mumbai.<br>
+        </div>
+        <div id="bannerimg">
+            <a href="https://rebelcorp.in/"> <img src="./logobanner/Screenshot_2022_1210_135813.png" alt=""></a>
+            <a href="https://rebelcorp.in/"><img src="./logobanner/Screenshot_2022_1210_135847.png" alt=""></a>
+            <a href="https://rebelcorp.in/"><img src="./logobanner/Screenshot_2022_1210_135905.png" alt=""></a>
+            <a href="https://rebelcorp.in/"><img src="./logobanner/Screenshot_2022_1210_135933.png" alt=""></a>
+        </div>
+    </div>
 </body>
+
 </html>
